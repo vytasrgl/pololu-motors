@@ -271,7 +271,7 @@ class Maestro(object):
             (motor,) + self._intToLowHigh(acceleration)
         )
 
-    def setTarget(self,motor, target, device=DEFAULT_DEVICE_ID):
+    def setTarget(self, motor, target, device=DEFAULT_DEVICE_ID):
         """
         Sets motor to the target
         :Parameters:
@@ -325,4 +325,6 @@ class Maestro(object):
             ()
         )
 
+    def clean(self):
+        self._serial.flushInput()
 
